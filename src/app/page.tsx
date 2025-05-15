@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NakedTurtle: Premium IPTV Streaming Service | Free Trial Available",
     description:
-      "Fast & stable IPTV streaming with 15,000+ channels, movies & shows. No buffering, premium quality, 24/7 support. Start your free trial today!",
+      "Fast & stable IPTV streaming with 10,000+ channels, movies & shows. No buffering, premium quality, 24/7 support. Start your free trial today!",
     url: "https://NakedTurtle.com",
     siteName: "NakedTurtle",
     type: "website",
