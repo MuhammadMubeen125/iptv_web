@@ -10,7 +10,7 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  metadataBase: new URL("https://kyostream.com"),
+  metadataBase: new URL("http://nakedturtleiptv.com"),
   generator: "Next.js",
   category: "entertainment",
   robots: {
