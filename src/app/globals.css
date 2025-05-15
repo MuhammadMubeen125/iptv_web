@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Utility classes using custom properties */
+@layer utilities {
+  /* Experimental: Not supported in all browsers */
+  .text-balance {
+    text-wrap: balance;
+  }
+  .bg-background {
+    background-color: hsl(var(--background));
+  }
+  .text-foreground {
+    color: hsl(var(--foreground));
+  }
+  .text-muted-foreground {
+    color: hsl(var(--muted-foreground));
+  }
+  .border-border {
+    border-color: hsl(var(--border));
+  }
+  .bg-secondary {
+    background-color: hsl(var(--secondary));
+  }
+}
+
+/* Base styles and CSS custom properties */
+@layer base {
+  :root {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 0.5rem;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Themed text colors */
+    --text-primary: var(--foreground);
+    --text-secondary: var(--muted-foreground);
+    
+    /* Themed background colors */
+    --bg-primary: var(--background);
+    --bg-secondary: var(--secondary);
+    --bg-card-transparent: #18181b80; /* Semi-transparent dark background */
+    
+    /* Themed accent colors */
+    --accent-primary: 160 100% 45%; /* emerald-like */
+    --accent-secondary: 280 100% 60%; /* purple-like */
+  }
+
+  /* Ensure consistent box-sizing and border color */
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+  
+  /* Set the base background and text colors using our utility classes */
+  body {
+    @apply bg-background text-foreground overflow-x-hidden overflow-y-auto;
+  }
+}
+
+/* Global component classes */
+@layer components {
+  /* Text color classes */
+  .text-primary {
+    @apply text-foreground;
+  }
+  .text-secondary {
+    @apply text-muted-foreground;
+  }
+  
+  /* Background color classes */
+  .bg-primary {
+    @apply bg-background;
+  }
+  /* For bg-secondary, use the utility class defined earlier directly to avoid circular dependency */
+  
+  /* Custom background classes */
+  .bg-card-transparent {
+    background-color: var(--bg-card-transparent);
+  }
+  
+  /* Accent color classes */
+  .accent-primary {
+    color: hsl(var(--accent-primary));
+  }
+  .accent-secondary {
+    color: hsl(var(--accent-secondary));
+  }
+  
+  .bg-accent-primary {
+    background-color: hsl(var(--accent-primary));
+  }
+  .bg-accent-secondary {
+    background-color: hsl(var(--accent-secondary));
+  }
+  
+  /* Border color classes */
+  .border-primary {
+    @apply border-border;
+  }
+  
+  /* Layout specific classes */
+  .site-wrapper {
+    @apply flex flex-col min-h-screen bg-background relative;
+  }
+  
+  .gradient-background {
+    @apply fixed inset-0 h-screen w-screen z-0;
+  }
+  
+  .gradient-overlay {
+    @apply absolute inset-0 bg-gradient-to-r from-accent-secondary to-accent-primary opacity-30 pointer-events-none;
+  }
+  
+  .background-image-container {
+    @apply absolute top-0 left-0 right-0 h-[100vh] z-0;
+  }
+  
+  .background-image {
+    @apply absolute inset-0 bg-[url('/back.webp')] bg-no-repeat bg-top bg-cover opacity-10 pointer-events-none;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.7) 75%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.7) 75%, rgba(0,0,0,0) 100%);
+  }
+  
+  .main-content {
+    @apply flex-grow w-full relative z-10 md:pt-0 pt-[72px];
+  }
+}
