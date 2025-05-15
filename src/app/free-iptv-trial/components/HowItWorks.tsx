@@ -1,24 +1,39 @@
-import { Badge } from "@/components/ui/badge"
-import { MessageCircle, User, PlayCircle } from "lucide-react"
+import { Badge } from "@/components/ui/badge";
+import { MessageCircle, User, PlayCircle } from "lucide-react";
 
 export default function HowItWorks() {
   const steps = [
     {
-      icon: <MessageCircle className="h-10 w-10 text-accent-primary" aria-hidden="true" />,
+      icon: (
+        <MessageCircle
+          className="h-10 w-10 text-accent-primary"
+          aria-hidden="true"
+        />
+      ),
       title: "Request Your IPTV Trial",
-      description: "Reach out through Live Chat, Email, Discord, or Telegram to request your free IPTV trial access."
+      description:
+        "Reach out through Live Chat, Email, Discord, or Telegram to request your free IPTV trial access.",
     },
     {
-      icon: <User className="h-10 w-10 text-accent-secondary" aria-hidden="true" />,
+      icon: (
+        <User className="h-10 w-10 text-accent-secondary" aria-hidden="true" />
+      ),
       title: "Personalized Trial Setup",
-      description: "Tell us your device type (Firestick, Android, iOS), email address, and country for an optimized trial experience."
+      description:
+        "Tell us your device type (Firestick, Android, iOS), email address, and country for an optimized trial experience.",
     },
     {
-      icon: <PlayCircle className="h-10 w-10 text-accent-primary" aria-hidden="true" />,
+      icon: (
+        <PlayCircle
+          className="h-10 w-10 text-accent-primary"
+          aria-hidden="true"
+        />
+      ),
       title: "Start Your Free IPTV Streaming",
-      description: "We'll send you login credentials and setup instructions to begin watching premium IPTV channels instantly."
-    }
-  ]
+      description:
+        "We'll send you login credentials and setup instructions to begin watching premium IPTV channels instantly.",
+    },
+  ];
 
   return (
     <section className="py-16" aria-labelledby="how-it-works-heading">
@@ -27,9 +42,12 @@ export default function HowItWorks() {
           <Badge className="bg-accent-secondary/20 text-accent-secondary border-accent-secondary/20 px-4 py-1 mb-4">
             HOW TO GET YOUR FREE TRIAL
           </Badge>
-          <h2 id="how-it-works-heading" className="text-3xl font-bold mb-4">Get Your Free IPTV Trial in 3 Simple Steps</h2>
+          <h2 id="how-it-works-heading" className="text-3xl font-bold mb-4">
+            Get Your Free IPTV Trial in 3 Simple Steps
+          </h2>
           <p className="text-muted-foreground">
-            Starting your free IPTV trial is quick and easy - we&apos;ll have you streaming in minutes
+            Starting your free IPTV trial is quick and easy - we&apos;ll have
+            you streaming in minutes
           </p>
         </div>
 
@@ -38,9 +56,12 @@ export default function HowItWorks() {
             <div key={index} className="flex-1 relative">
               {/* Connected line between steps */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-accent-secondary to-accent-primary transform -translate-x-1/2" aria-hidden="true" />
+                <div
+                  className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-accent-secondary to-accent-primary transform -translate-x-1/2"
+                  aria-hidden="true"
+                />
               )}
-              
+
               <div className="bg-card-transparent border border-border rounded-xl p-8 h-full relative z-10">
                 <div className="flex justify-center mb-6">
                   <div className="rounded-full p-4 bg-background inline-block">
@@ -59,5 +80,5 @@ export default function HowItWorks() {
         </div>
       </div>
     </section>
-  )
-} 
+  );
+}
