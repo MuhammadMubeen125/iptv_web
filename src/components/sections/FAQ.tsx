@@ -9,13 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  CreditCard,
-  Monitor,
-  ShieldCheck,
-  HelpCircle,
-  MessageSquare,
-} from "lucide-react";
+import { CreditCard, Monitor, ShieldCheck, HelpCircle } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 import Script from "next/script";
