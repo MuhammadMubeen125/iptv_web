@@ -250,18 +250,18 @@ export default function FAQ() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-                <Button
+                {/* <Button
                   className="bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center gap-2 w-full sm:w-auto"
-                  // onClick={() => {
-                  //   if (typeof window !== "undefined" && window.Tawk_API) {
-                  //     window.Tawk_API.toggle();
-                  //   }
-                  // }}
+                  onClick={() => {
+                    if (typeof window !== "undefined" && window.Tawk_API) {
+                      window.Tawk_API.toggle();
+                    }
+                  }}
                   aria-label="Start live chat with support"
                 >
                   <MessageSquare className="h-4 w-4" aria-hidden="true" />
                   Live Chat Support
-                </Button>
+                </Button> */}
                 <Button
                   variant="outline"
                   className="border-zinc-700 hover:bg-zinc-800 text-white flex items-center justify-center gap-2 w-full sm:w-auto"
