@@ -1,8 +1,14 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/Card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/Card";
 import { Badge } from "@/components/ui/badge";
 import FaqSetup from "@/components/sections/FaqSetup";
 import { setupContent, DeviceInfo, SetupStep } from "./setupContent";
@@ -30,14 +36,37 @@ export default function SetupPageClient() {
               {hero.description}
             </p>
             <div className="flex flex-col gap-4 sm:flex-row pt-4">
-              <Button size="lg" className="bg-accent-primary hover:bg-accent-primary/90 text-primary-foreground" asChild>
-                <Link href={hero.buttons.primary.href} className="flex items-center">
-                  {hero.buttons.primary.text} <hero.buttons.primary.icon className="ml-1 h-4 w-4" aria-hidden="true" />
+              <Button
+                size="lg"
+                className="bg-accent-primary hover:bg-accent-primary/90 text-primary-foreground"
+                asChild
+              >
+                <Link
+                  href={hero.buttons.primary.href}
+                  className="flex items-center"
+                >
+                  {hero.buttons.primary.text}{" "}
+                  <hero.buttons.primary.icon
+                    className="ml-1 h-4 w-4"
+                    aria-hidden="true"
+                  />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-border text-foreground hover:bg-[#18181b80]" asChild>
-                <Link href={hero.buttons.secondary.href} className="flex items-center">
-                  {hero.buttons.secondary.text} <hero.buttons.secondary.icon className="ml-1 h-4 w-4" aria-hidden="true" />
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-border text-foreground hover:bg-[#18181b80]"
+                asChild
+              >
+                <Link
+                  href={hero.buttons.secondary.href}
+                  className="flex items-center"
+                >
+                  {hero.buttons.secondary.text}{" "}
+                  <hero.buttons.secondary.icon
+                    className="ml-1 h-4 w-4"
+                    aria-hidden="true"
+                  />
                 </Link>
               </Button>
             </div>
@@ -46,10 +75,15 @@ export default function SetupPageClient() {
       </section>
 
       {/* Quick Start Guide */}
-      <section id="quick-start" className="w-full py-16 md:py-24 border-b border-border">
+      <section
+        id="quick-start"
+        className="w-full py-16 md:py-24 border-b border-border"
+      >
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter mb-4">{quickStart.title}</h2>
+            <h2 className="text-3xl font-bold tracking-tighter mb-4">
+              {quickStart.title}
+            </h2>
             <p className="max-w-2xl text-muted-foreground text-lg">
               {quickStart.description}
             </p>
@@ -66,7 +100,9 @@ export default function SetupPageClient() {
       <section className="w-full py-16 md:py-24 border-b border-border">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter mb-4">{devices.title}</h2>
+            <h2 className="text-3xl font-bold tracking-tighter mb-4">
+              {devices.title}
+            </h2>
             <p className="max-w-2xl text-muted-foreground text-lg">
               {devices.description}
             </p>
@@ -92,20 +128,20 @@ export default function SetupPageClient() {
                 <p className="text-zinc-400">{support.description}</p>
               </div>
               <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-3">
-                <Button 
+                <Button
                   className="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 flex items-center justify-center gap-2 w-full sm:w-auto"
-                  onClick={() => {
-                    if (typeof window !== 'undefined' && window.Tawk_API) {
-                      window.Tawk_API.toggle();
-                    }
-                  }}
+                  // onClick={() => {
+                  //   if (typeof window !== 'undefined' && window.Tawk_API) {
+                  //     window.Tawk_API.toggle();
+                  //   }
+                  // }}
                 >
                   <support.buttons.primary.icon className="h-4 w-4" />
                   {support.buttons.primary.text}
                 </Button>
-                <Button 
-                  variant="outline" 
-                  className="border-border hover:bg-[#18181b80] text-white px-4 py-2 flex items-center justify-center gap-2 w-full sm:w-auto" 
+                <Button
+                  variant="outline"
+                  className="border-border hover:bg-[#18181b80] text-white px-4 py-2 flex items-center justify-center gap-2 w-full sm:w-auto"
                   asChild
                 >
                   <Link href={support.buttons.secondary.href}>
@@ -125,7 +161,7 @@ export default function SetupPageClient() {
 // Component for device cards
 function DeviceCard({ device }: { device: DeviceInfo }) {
   const { icon: Icon, title, description } = device;
-  
+
   return (
     <Card className="bg-[#18181b80] border-border relative group overflow-hidden">
       <div className="absolute inset-0 from-accent-secondary/0 to-accent-primary/0 group-hover:from-accent-secondary/10 group-hover:to-accent-primary/10 transition-all duration-300"></div>
@@ -136,7 +172,9 @@ function DeviceCard({ device }: { device: DeviceInfo }) {
         <CardTitle className="text-center text-foreground">{title}</CardTitle>
       </CardHeader>
       <CardContent className="flex justify-center relative z-10">
-        <CardDescription className="text-base text-center text-muted-foreground">{description}</CardDescription>
+        <CardDescription className="text-base text-center text-muted-foreground">
+          {description}
+        </CardDescription>
       </CardContent>
     </Card>
   );
@@ -154,7 +192,9 @@ function SetupStepCard({ step }: { step: SetupStep }) {
           {Icon ? (
             <Icon className="h-8 w-8 text-accent-primary" aria-hidden="true" />
           ) : (
-            <div className="flex h-8 w-8 items-center justify-center text-accent-primary font-bold text-xl">2</div>
+            <div className="flex h-8 w-8 items-center justify-center text-accent-primary font-bold text-xl">
+              2
+            </div>
           )}
         </div>
         <CardTitle className="text-center text-foreground">{title}</CardTitle>
@@ -166,7 +206,13 @@ function SetupStepCard({ step }: { step: SetupStep }) {
         {links && links.length > 0 && (
           <div className="mt-2 flex gap-4">
             {links.map((link, index) => (
-              <Button key={index} asChild size="sm" variant="link" className="text-accent-primary">
+              <Button
+                key={index}
+                asChild
+                size="sm"
+                variant="link"
+                className="text-accent-primary"
+              >
                 <Link href={link.url} target="_blank" rel="noopener noreferrer">
                   {link.text}
                 </Link>
@@ -177,4 +223,4 @@ function SetupStepCard({ step }: { step: SetupStep }) {
       </CardContent>
     </Card>
   );
-} 
+}
